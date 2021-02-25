@@ -243,8 +243,13 @@ class Pendulum(Particle):
 
     def F(self, x, v, t):
         g = 9.8 
-        F = - g/self.l*np.sin(x)
+        nu = 1 # viscous drag coefficient
+        Fd = 1 # driving force
+        omegaD = 1.15 # driving frequency
+        F = - g/self.l*np.sin(x) - nu*v + Fd*np.sin(omegaD*t)
         
         return F
-
-            
+    
+        
+    def trajectory_energy(self, x_list, v_list):
+        self.energy = 0.5 * self.m * v_list**2 + self.l * (1 - np.cos(x_list))
