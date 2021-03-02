@@ -263,5 +263,4 @@ class Pendulum(Particle):
         F = self.Fd*np.cos(self.omega_d*t) - self.nu*v - g/self.l*np.sin(x)
         
         return F
-
-            
+        

@@ -1,0 +1,3 @@
+2/25 DS
+HW 2 clarification: Poincare sections
+Generators and Iterator classes
